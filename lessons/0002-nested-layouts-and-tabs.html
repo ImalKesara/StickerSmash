@@ -1,0 +1,16 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Root layout, tabs layout, and what appears</title><link rel="stylesheet" href="../assets/lesson.css"></head><body><main>
+<p class="eyebrow">Lesson 02 · Expo fundamentals</p><h1>Root layout, tabs layout, and what appears</h1><p class="lede">The root layout and the tabs layout are two different navigators, nested one inside the other.</p>
+<h2>Think of a container inside a container</h2><pre>src/app/_layout.tsx
+  Stack navigator
+    └── (tabs) group      ← one screen/group inside the Stack
+         Tabs navigator   ← creates the tab bar
+           ├── index.tsx  ← Home tab
+           └── about.tsx  ← About tab</pre>
+<p>A layout is a parent wrapper for the routes in its folder. The root <code>_layout.tsx</code> currently returns a <code>Stack</code> and configures <code>&lt;Stack.Screen name="(tabs)" ... /&gt;</code>. That names the child group so you can set options such as hiding the Stack header. The name does <strong>not</strong> mean “show every tab at once,” and it does not create the tab pages.</p>
+<h2>What actually makes the tabs?</h2><p>Inside <code>src/app/(tabs)/_layout.tsx</code>, your app returns <code>&lt;Tabs&gt;</code>. Its <code>&lt;Tabs.Screen name="index"&gt;</code> and <code>&lt;Tabs.Screen name="about"&gt;</code> configure the matching page files, including icons. The page files supply the content. The tab bar stays available while the selected page is shown; selecting About switches the content from <code>index.tsx</code> to <code>about.tsx</code>. It does not put both pages on screen together.</p>
+<h2>Why the parentheses?</h2><p><code>(tabs)</code> is a route group name used to organize and share a layout. Parentheses keep the group name out of the URL. So your Home page is <code>/</code> and About is <code>/about</code>, not <code>/(tabs)/about</code>.</p>
+<h2>Make the file tree do the talking</h2><p>To check what your tab bar can show, look inside <code>src/app/(tabs)/</code>. In this project, the two page files are <code>index.tsx</code> and <code>about.tsx</code>; those correspond to the Home and About tabs configured in that folder's layout. Adding another direct route file and configuring it as a <code>Tabs.Screen</code> gives the tab navigator another route to show.</p>
+<p class="callout"><strong>Remember:</strong> the root Stack hosts the tabs group; the Tabs navigator controls switching among its child pages. The group name is organizational; the page files are routes.</p>
+<h2>Quick recall</h2><p>If you want to change an About icon, which layout file should you edit? If you want to change the words on the About page, which file? Answer before opening the reference.</p>
+<ul><li><a href="../reference/layouts-and-tabs.html">Layouts and tabs reference</a></li><li><a href="../reference/project-map.html">Project map</a></li><li><a href="https://docs.expo.dev/router/basics/navigation-layouts/">Primary source: Expo Router navigation layouts</a></li></ul>
+<p>Ask me any follow-up question if the navigator nesting still feels unclear.</p><footer>Examples describe this repository's current <code>src/app/</code> routes and its Expo SDK 57 project.</footer></main></body></html>

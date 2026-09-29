@@ -1,0 +1,8 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Expo Router layouts and tabs</title><link rel="stylesheet" href="../assets/lesson.css"></head><body><main><p class="eyebrow">Quick reference · Expo Router</p><h1>Layouts and tabs</h1>
+<pre>src/app/_layout.tsx          root Stack
+└── (tabs)/                  route group, no URL segment
+    ├── _layout.tsx          Tabs navigator / tab-bar setup
+    ├── index.tsx            Home tab, URL /
+    └── about.tsx            About tab, URL /about</pre>
+<dl class="map"><dt>Root <code>_layout.tsx</code></dt><dd>Owns app-wide navigator/providers and how top-level routes are arranged.</dd><dt><code>&lt;Stack.Screen name="(tabs)"&gt;</code></dt><dd>Configures the group in the parent Stack (for example, hide its header). It does not create the tabs.</dd><dt><code>(tabs)</code></dt><dd>Route group folder: groups related screens without adding “tabs” to their URL.</dd><dt>Tabs <code>_layout.tsx</code></dt><dd>Returns <code>&lt;Tabs&gt;</code> and configures tab titles, icons, colors, and headers.</dd><dt><code>&lt;Tabs.Screen name="index"&gt;</code></dt><dd>Configures the existing <code>index.tsx</code> child route as a tab. The file supplies the screen content.</dd><dt>Current tab</dt><dd>Only the selected tab’s page content is shown in the content area; the tab bar lets the user switch between tabs.</dd></dl>
+<p><a href="../lessons/0002-nested-layouts-and-tabs.html">Open the full lesson ↗</a></p></main></body></html>

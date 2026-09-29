@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>StickerSmash project map</title><link rel="stylesheet" href="../assets/lesson.css"></head><body><main><p class="eyebrow">Quick reference · Expo SDK 57</p><h1>StickerSmash project map</h1><p>A quick way to decide where a change belongs.</p>
+<dl class="map">
+<dt><code>src/app/</code></dt><dd>Expo Router route files only. Each screen file becomes a route.</dd>
+<dt><code>src/app/index.tsx</code></dt><dd>The root route (<code>/</code>), currently the starter screen.</dd>
+<dt><code>src/app/_layout.tsx</code></dt><dd>Root navigator shared by routes; currently renders a Stack.</dd>
+<dt><code>src/components/</code></dt><dd>A useful future home for reusable UI, outside the route directory.</dd>
+<dt><code>assets/images/</code></dt><dd>Images referenced by screens or app configuration.</dd>
+<dt><code>app.json</code></dt><dd>Expo app identity and platform/build configuration; icon, splash, plugins, orientation.</dd>
+<dt><code>package.json</code></dt><dd>Project entry point, dependencies, and npm scripts.</dd>
+<dt><code>package-lock.json</code></dt><dd>Exact dependency resolution for reproducible npm installs.</dd>
+<dt><code>tsconfig.json</code></dt><dd>TypeScript settings and import aliases such as <code>@/*</code> → <code>src/*</code>.</dd>
+<dt><code>expo-env.d.ts</code></dt><dd>Expo/Router TypeScript environment declarations; generally generated.</dd>
+<dt><code>.expo/</code></dt><dd>Local generated Expo state and route types; usually not hand-edited.</dd>
+<dt><code>example/</code></dt><dd>Archived starter example code/scripts; not active routes because it is outside <code>src/app/</code>.</dd>
+<dt><code>.gitignore</code></dt><dd>Files Git should leave untracked, often generated or machine-local files.</dd>
+<dt><code>.vscode/</code></dt><dd>Editor recommendations and workspace preferences.</dd>
+<dt><code>AGENTS.md</code></dt><dd>Repository instructions for humans and coding agents.</dd>
+<dt><code>README.md</code></dt><dd>Project introduction and basic start instructions.</dd>
+<dt><code>skills-lock.json</code></dt><dd>Tooling/skill setup metadata, not app runtime code.</dd>
+<dt><code>LICENSE</code></dt><dd>Terms for using and distributing the project.</dd>
+</dl><p class="callout">No <code>ios/</code> or <code>android/</code> folders are present. This project uses Expo's generated-native-project workflow; configure native behavior through Expo config and plugins.</p>
+<h2>Layout and tabs in this project</h2><p><code>src/app/_layout.tsx</code> creates the root Stack and registers the <code>(tabs)</code> group as one child screen. <code>src/app/(tabs)/_layout.tsx</code> creates the tab bar; its direct child routes <code>index.tsx</code> and <code>about.tsx</code> are the Home and About tabs. The parentheses mark a route group and are not part of the URL.</p>
+<p><a href="../lessons/0001-project-structure.html">Lesson 1: project structure ↗</a> · <a href="../lessons/0002-nested-layouts-and-tabs.html">Lesson 2: layouts and tabs ↗</a></p></main></body></html>

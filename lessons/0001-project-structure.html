@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Find your way around StickerSmash</title><link rel="stylesheet" href="../assets/lesson.css"></head><body><main>
+<p class="eyebrow">Lesson 01 · Expo fundamentals</p><h1>Find your way around StickerSmash</h1>
+<p class="lede">In two minutes, learn the one folder rule that helps you place most changes correctly.</p>
+<h2>The mental model</h2><p>Think of the project as three layers: <strong>screens</strong> live in <code>src/app/</code>, <strong>shared UI and logic</strong> live elsewhere under <code>src/</code>, and <strong>Expo setup plus dependencies</strong> live in root config files.</p>
+<pre>src/
+  app/                 screens and navigation
+    _layout.tsx        shared navigation shell
+    index.tsx          first screen: route /
+assets/images/        image files
+app.json              Expo app settings
+package.json          dependencies and commands</pre>
+<h2>Follow a screen from startup</h2><ol><li><code>package.json</code> says the app starts at <code>expo-router/entry</code>.</li><li>Expo Router looks at route files in <code>src/app/</code>.</li><li><code>_layout.tsx</code> wraps screens in a Stack navigator.</li><li><code>index.tsx</code> is the screen at the starting path <code>/</code>.</li></ol>
+<p>That is file-based routing: the file tree helps define the app's URLs and navigation. A later <code>src/app/about.tsx</code> would represent <code>/about</code>. Put reusable buttons or helpers in <code>src/components/</code> or another folder outside <code>src/app/</code>, so Router does not treat them as screens.</p>
+<h2>Where would a change go?</h2><p>Want to change the first screen's text? Open <code>src/app/index.tsx</code>. Want a second screen? Add a route file under <code>src/app/</code>. Want to change the app icon or splash screen? Check the paths and settings in <code>app.json</code>. Want an image in the UI? Put it under <code>assets/images/</code> and reference it from a screen.</p>
+<h2>Try a quick recall</h2><p>Without looking above: where would you put (1) a reusable sticker button, (2) the app icon path, and (3) the initial screen? Say the file or folder for each. Then try changing only the home-screen sentence in <code>src/app/index.tsx</code> and run the project to see Fast Refresh update it.</p>
+<p class="callout"><strong>Remember:</strong> route screen = <code>src/app/</code>; reusable piece = outside it; Expo identity/settings = <code>app.json</code>.</p>
+<h2>Continue learning</h2><ul><li><a href="../reference/project-map.html">Project map reference</a></li><li><a href="https://docs.expo.dev/router/basics/core-concepts/">Primary source: Expo Router core concepts</a></li><li><a href="https://docs.expo.dev/tutorial/introduction/">Next: official Expo tutorial</a></li></ul>
+<p>Ask me any follow-up question—even if a file's purpose still feels fuzzy.</p>
+<footer>Grounded in the current StickerSmash repository and Expo SDK 57 documentation. The exact directory names and responsibilities can vary across Expo project templates.</footer>
+</main></body></html>
