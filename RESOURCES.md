@@ -14,6 +14,10 @@
   Documents `app.json` properties such as app name, icons, orientation, and plugins.
 - [Expo tutorial](https://docs.expo.dev/tutorial/introduction/)
   Guided project-based path for building an Expo app that runs on mobile and web.
+- [Expo Image (SDK 57)](https://docs.expo.dev/versions/v57.0.0/sdk/image/)
+  Version-matched API reference for `expo-image`, including its `source` prop and supported source forms.
+- [Passing props to a component](https://react.dev/learn/passing-props-to-a-component)
+  React's primary guide to passing values into components and reading them from the props object.
 
 ## Wisdom (Communities)
 
