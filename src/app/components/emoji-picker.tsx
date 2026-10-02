@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, Modal, Pressable } from "react-native";
 type Props = {
   isVisible: boolean;
   onClose: () => void;
+  children: React.ReactNode;
 };
 export default function EmojiPicker({ isVisible,children, onClose }: Props) {
   return (
